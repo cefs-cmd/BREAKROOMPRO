@@ -3,143 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Break Room Pro - Início</title>
-    <link rel="stylesheet" href="index.css">
+    <title>RageRoom Pro - Login</title>
+
+    <!-- importação do css -->
+      <link rel="stylesheet" href="index.css">
+    
+    <!-- IMPORTAÇÃO DE FONTES DO GOOGLE (OSWALD PARA TÍTULOS IMPACTANTES E ROBOTO PARA TEXTOS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- IMPORTAÇÃO DA BIBLIOTECA FONT AWESOME PARA EXIBIR OS ÍCONES DO LAYOUT -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 </head>
 <body>
 
-<!-- CABEÇALHO COMPLETO E MAIS RICO -->
-<div style="width: 100%; background-color: rgba(18, 18, 18, 0.95); border-bottom: 1px solid var(--border-gray); padding: 15px 0; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+    <!-- INÍCIO DO ELEMENTO CONTAINER (CONTÉM AS DUAS COLUNAS PRINCIPAIS SUPERIORES) -->
+    <div class="container">
         
-        <!-- MENU DE NAVEGAÇÃO COM EFEITOS -->
-        <div style="display: flex; gap: 40px;">
-            <a href="#" style="position: relative; color: var(--orange-bright); font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 5px;">
-                Início
-                <span style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--orange-main), var(--orange-bright)); border-radius: 2px;"></span>
-            </a>
-            <a href="#historia" style="color: var(--text-gray); font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;" onmouseover="this.style.color='var(--orange-bright)'" onmouseout="this.style.color='var(--text-gray)'">
-                História
-            </a>
-            <a href="#servicos" style="color: var(--text-gray); font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;" onmouseover="this.style.color='var(--orange-bright)'" onmouseout="this.style.color='var(--text-gray)'">
-                Serviços
-            </a>
-            <a href="#contato" style="color: var(--text-gray); font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;" onmouseover="this.style.color='var(--orange-bright)'" onmouseout="this.style.color='var(--text-gray)'">
-                Contato
-            </a>
-        </div>
+        <!-- INÍCIO DO LADO ESQUERDO: SEÇÃO EXPLICATIVA E IDENTIDADE DO RAGEROOM -->
+        <div class="info-side">
+            
+            <!-- BLOCAGEM DO ÍCONE DA LOGOMARCA SUPERIOR (MÁSCARA JASON) -->
+            <div class="logo-placeholder"><i class="fa-solid fa-skull"></i></div>
+            
+            <!-- TÍTULO DA MARCA -->
+            <h1 class="brand-title">BREAK ROOM </h1>
+            
+            <!-- SUBTÍTULO DO PRODUTO -->
+            <div class="brand-subtitle">PRO</div>
+            
+            <!-- SLOGAN DE AÇÃO DO ESTABELECIMENTO -->
+            <div class="slogan">DESTRUA <span>•</span> LIBERE <span>•</span> RENOVE</div>
+            
+            <!-- PARÁGRAFO RESUMO DE APRESENTAÇÃO -->
+            <p class="description">
+                Gerencie suas sessões, escolha sua sucata e libere o estresse com segurança!
+            </p>
 
-        <!-- ÍCONE DE USUÁRIO -->
-        <div style="display: flex; align-items: center; gap: 12px; background-color: rgba(230, 81, 0, 0.1); padding: 8px 15px; border-radius: 30px; border: 1px solid rgba(230, 81, 0, 0.3);">
-            <div style="position: relative;">
-                <i class="fa-solid fa-user-circle" style="font-size: 30px; color: #ffffff;"></i>
-                <span style="position: absolute; top: -2px; right: -2px; width: 11px; height: 11px; background-color: #4CAF50; border-radius: 50%; border: 2px solid #121212; box-shadow: 0 0 5px #4CAF50;"></span>
+            <!-- 1º ITEM DE BENEFÍCIO: SEGURANÇA -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Segurança em 1º lugar</h3>
+                    <p>Equipamentos de proteção e termos de responsabilidade para sua segurança.</p>
+                </div>
             </div>
-            <div>
-                <span style="color: #ffffff; font-size: 0.9rem; font-weight: 500;">Usuário Ativo</span>
-                <br>
-                <small style="color: var(--orange-bright); font-size: 0.75rem;">Online agora</small>
+
+            <!-- 2º ITEM DE BENEFÍCIO: DESTRUIÇÃO -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-burst"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Destrua o estresse</h3>
+                    <p>Salas equipadas para você quebrar tudo e deixar a raiva pra trás.</p>
+                </div>
+            </div>
+
+            <!-- 3º ITEM DE BENEFÍCIO: RESERVAS -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Reserve sua sessão</h3>
+                    <p>Agende sua sala, escolha sua sucata e prepare-se para destruir!</p>
+                </div>
             </div>
         </div>
+        <!-- FIM DO LADO ESQUERDO -->
+
+        <!-- INÍCIO DO LADO DIREITO: CARD DE AUTENTICAÇÃO / FORMULÁRIO -->
+        <div class="login-card">
+            
+            <!-- ÍCONE DE SINALIZAÇÃO INTERNA DO CARD -->
+            <div class="card-header-icon">
+                <i class="fa-solid fa-heart-crack"></i>
+            </div>
+            
+            <!-- TÍTULO DE BOAS VINDAS -->
+            <h2>BEM-VINDO(A)!</h2>
+            
+            <!-- ORIENTAÇÃO DE LOGIN -->
+            <div class="welcome-sub">Faça login para acessar o RageRoom Pro</div>
+
+            <!-- FORMULÁRIO DE LOGIN -->
+            <form>
+                
+                <!-- GRUPO DO CAMPO E-MAIL -->
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope prefix-icon"></i>
+                        <input type="email" id="email" placeholder="seu@gmail.com" required>
+                    </div>
+                </div>
+
+                <!-- GRUPO DO CAMPO SENHA -->
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock prefix-icon"></i>
+                        <input type="password" id="password" placeholder="Digite sua senha" required>
+                        <i class="fa-regular fa-eye toggle-password"></i>
+                    </div>
+                </div>
+
+                <!-- LINK DE SENHA ESQUECIDA -->
+                <a href="senha.html" class="forgot-password">Esqueceu sua senha?</a>
+
+                <!-- BOTÃO DE SUBMISSÃO (ENTRAR) -->
+                <button type="submit" class="btn-enter">Entrar</button>
+            </form>
+
+            <!-- LINHA VISUAL DIVISÓRIA COM TEXTO CENTRAL -->
+            <div class="divider">OU</div>
+
+            <!-- BOTÃO ALTERNATIVO PARA CRIAÇÃO DE NOVAS CONTAS -->
+            <a href="cadastro.html"; style="text-decoration: none;">
+            <button class="btn-register">
+                <i class="fa-regular fa-user"></i> Criar Conta
+            </button>
+            </a>
+
+            <!-- NOTA DE SEGURANÇA E CRIPTOGRAFIA DO CARD -->
+            <div class="security-notice">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>Seus dados estão protegidos<br>com segurança avançada.</div>
+            </div>
+        </div>
+        <!-- FIM DO LADO DIREITO -->
 
     </div>
-</div>
+    <!-- FIM DO CONTAINER SUPERIOR -->
 
-<div class="container">
-    <!-- LADO ESQUERDO: MUITO MAIS CONTEÚDO E DETALHES -->
-    <div class="info-side" id="historia">
-        <div class="logo-placeholder" style="position: relative;">
-            <i class="fa-solid fa-skull" style="font-size: 90px;"></i>
-            <span style="position: absolute; top: 0; right: 30px; font-size: 2rem; color: var(--orange-bright); transform: rotate(15deg); text-shadow: 0 0 10px var(--orange-main);"></span>
-        </div>
-        
-        <h1 class="brand-title">Break Room</h1>
-        <div class="brand-subtitle">PRO</div>
-        <div class="slogan">DESTRUA <span>•</span> LIBERE <span>•</span> RENOVE</div>
-
-        <!-- FRASE DE IMPACTO -->
-        <div style="background: linear-gradient(135deg, var(--orange-main), var(--orange-bright)); padding: 12px; border-radius: 8px; text-align: center; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(230, 81, 0, 0.3);">
-            <p style="color: #fff; font-family: 'Oswald', sans-serif; font-size: 1.3rem; letter-spacing: 2px; margin: 0;">A MELHOR TERAPIA É QUEBRAR TUDO!</p>
-        </div>
-
-        <h2 style="font-family: 'Oswald', sans-serif; color: var(--orange-bright); margin-bottom: 20px; font-size: 1.8rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <i class="fa-solid fa-fire"></i> Nossa História <i class="fa-solid fa-fire"></i>
-        </h2>
-        
-        <p class="description" style="text-align: justify; font-size: 1.1rem; line-height: 1.7;">
-            Nascido no coração do Recife, o <strong>Break Room Pro</strong> surgiu de uma ideia simples mas poderosa: criar um espaço onde o estresse, a raiva e a pressão do dia a dia pudessem ser transformados em pura energia e diversão. Somos o primeiro e maior centro de descarregamento emocional de Pernambuco, equipado com tecnologia e segurança para você extravasar tudo o que te incomoda.
-        </p>
-        
-        <p class="description" style="text-align: justify; font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
-            Não é só sobre quebrar objetos — é sobre liberar a mente, aliviar a tensão e sair daqui renovado, com um sorriso no rosto e a sensação de leveza que você só encontra aqui. Desde 2023, já ajudamos milhares de pessoas a se sentirem melhor, mais leves e prontas para tudo!
-        </p>
-
-        <!-- ÍCONES DE DESTAQUE ABAIXO DO TEXTO -->
-        <div style="display: flex; justify-content: space-around; margin-top: 20px; margin-bottom: 15px;">
-            <div style="text-align: center;">
-                <i class="fa-solid fa-shield-halved" style="color: var(--orange-bright); font-size: 22px; margin-bottom: 5px;"></i>
-                <p style="font-size: 0.85rem; color: var(--text-gray);">Segurança Total</p>
+    <!-- INÍCIO DO RODAPÉ DE REQUISITOS (FAIXA INFERIOR COMPLETA DA TELA) -->
+    <footer class="bottom-bar">
+        <div class="bottom-container">
+            
+            <!-- ITEM DO RODAPÉ: SALAS -->
+            <div class="bottom-item">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <span>Salas Seguras</span>
             </div>
-            <div style="text-align: center;">
-                <i class="fa-solid fa-burst" style="color: var(--orange-bright); font-size: 22px; margin-bottom: 5px;"></i>
-                <p style="font-size: 0.85rem; color: var(--text-gray);">Diversão Garantida</p>
+            
+            <!-- ITEM DO RODAPÉ: SUCATAS -->
+            <div class="bottom-item">
+                <i class="fa-solid fa-box-open"></i>
+                <span>Sucata Controlada</span>
             </div>
-            <div style="text-align: center;">
-                <i class="fa-solid fa-heart-pulse" style="color: var(--orange-bright); font-size: 22px; margin-bottom: 5px;"></i>
-                <p style="font-size: 0.85rem; color: var(--text-gray);">Bem-Estar</p>
+            
+            <!-- ITEM DO RODAPÉ: REGRAS DE PESO E TEMPO -->
+            <div class="bottom-item">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Limite de Peso: <strong>30 min / até 200kg</strong></span>
             </div>
+            
         </div>
-    </div>
-
-    <!-- LADO DIREITO: FOTO COM MAIS EFEITOS E DETALHES -->
-    <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px;">
-        <div style="position: relative; background-color: var(--card-dark); border: 2px solid var(--orange-main); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(230, 81, 0, 0.2); transform: rotate(-2deg); transition: transform 0.3s;">
-            <!-- IMAGEM -->
-            <img src="BREAK ROOM PRO.png" alt="Pessoa se divertindo quebrando objetos no Break Room Pro" style="width: 100%; max-width: 500px; height: auto; display: block;">
-
-
-            <div style="padding: 18px; text-align: center; background: linear-gradient(135deg, var(--orange-main), var(--orange-bright));">
-                <span style="color: #fff; font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: bold; letter-spacing: 1px;">Chegou estressado? Saiu renovado!</span>
-            </div>
-        </div>
-
-        <!-- FRASE ABAIXO DA FOTO -->
-        <p style="color: var(--text-gray); font-style: italic; text-align: center; max-width: 400px;">
-            "O melhor lugar para extravasar, se divertir e esquecer os problemas da rotina."
-        </p>
-    </div>
-</div>
-
-<!-- SEÇÃO DO BOTÃO -->
-<div style="width: 100%; text-align: center; padding: 40px 0 70px 0; margin-top: 20px; background: radial-gradient(circle, rgba(230, 81, 0, 0.05) 0%, rgba(18, 18, 18, 0) 70%); border-top: 1px solid rgba(230, 81, 0, 0.1); border-bottom: 1px solid rgba(230, 81, 0, 0.1);">
-    <h3 style="font-family: 'Oswald', sans-serif; color: #fff; font-size: 1.6rem; margin-bottom: 15px; letter-spacing: 2px;">Não perca tempo, liberte-se agora!</h3>
-    <a href="agenda.html" class="btn-enter" style="text-decoration: none; display: inline-block; width: auto; padding: 20px 60px; font-size: 1.6rem; letter-spacing: 4px; box-shadow: 0 10px 25px rgba(230, 81, 0, 0.4); transform: scale(1); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        AGENDE AGORA
-    </a>
-    <p style="color: var(--text-gray); margin-top: 15px; font-size: 0.9rem;">* Agendamento rápido e seguro em poucos cliques</p>
-</div>
-
-<!-- RODAPÉ -->
-<footer class="bottom-bar">
-    <div class="bottom-container">
-        <div class="bottom-item">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Salas Seguras</span>
-        </div>
-        <div class="bottom-item">
-            <i class="fa-solid fa-box-open"></i>
-            <span>Sucata Controlada</span>
-        </div>
-        <div class="bottom-item">
-            <i class="fa-solid fa-scale-balanced"></i>
-            <span>Limite: <strong>30min / 200kg</strong></span>
-        </div>
-    </div>
-</footer>
+    </footer>
+    <!-- FIM DO RODAPÉ -->
 
 </body>
-</html>
+</html>>
