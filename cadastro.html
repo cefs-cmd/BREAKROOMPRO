@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RageRoom Pro - Cadastro</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ligação do css -->
+      <link rel="stylesheet" href="index.css">
+      
+</head>
+<body>
+
+<div class="container">
+    <!-- LADO ESQUERDO -->
+    <div class="info-side">
+        <div class="logo-placeholder"><i class="fa-solid fa-skull"></i></div>
+        <h1 class="brand-title">BREAK ROOM</h1>
+        <div class="brand-subtitle">PRO</div>
+        <div class="slogan">DESTRUA <span>•</span> LIBERE <span>•</span> RENOVE</div>
+
+        <p class="description">
+            Crie sua conta, gerencie suas sessões e libere o estresse com total segurança!
+        </p>
+
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="feature-text">
+                <h3>Segurança em 1º lugar</h3>
+                <p>Dados criptografados e termos de responsabilidade garantidos.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-burst"></i></div>
+            <div class="feature-text">
+                <h3>Destrua o estresse</h3>
+                <p>Salas preparadas para você quebrar tudo e se divertir.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="feature-text">
+                <h3>Reserve sua sessão</h3>
+                <p>Agende, escolha itens e aproveite sua experiência.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LADO DIREITO - FORMULÁRIO DE CADASTRO -->
+    <div class="login-card" style="width:750px;max-width:95%">
+        <div class="card-header-icon"><i class="fa-solid fa-user-plus"></i></div>
+        <h2>FAÇA SEU CADASTRO</h2>
+        <div class="welcome-sub">Preencha seus dados para acessar o sistema</div>
+
+        <form>
+            <!-- NOME COMPLETO -->
+            <div class="input-group">
+                <label for="nome">Nome Completo</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user prefix-icon"></i>
+                    <input type="text" id="nome" placeholder="Ex: Pedro Vieira da Silva" required>
+                </div>
+            </div>
+
+            <!-- SENHA -->
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock prefix-icon"></i>
+                    <input type="password" id="senha" placeholder="Digite uma senha segura" required>
+                    <i class="fa-regular fa-eye toggle-password"></i>
+                </div>
+            </div>
+
+            <!-- CONFIRMAR SENHA -->
+            <div class="input-group">
+                <label for="confirma_senha">Confirmação de senha</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock-open prefix-icon"></i>
+                    <input type="password" id="confirma_senha" placeholder="Repita sua senha" required>
+                </div>
+            </div>
+
+            <!-- DATA DE NASCIMENTO -->
+            <div class="input-group">
+                <label for="nascimento">Data de nascimento</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-calendar-days prefix-icon"></i>
+                    <input type="date" id="nascimento" required>
+                </div>
+            </div>
+
+            <!-- SEXO -->
+          <div class="input-group">
+    <label for="sexo">Sexo</label>
+    <div class="input-wrapper">
+        <i class="fa-solid fa-venus-mars prefix-ico"></i>
+        <select id="sexo" required>
+
+            <option value="" style="background-color: #222; color: #fff; padding: 10px;">Selecione</option>
+            <option value="M" style="background-color: #222; color: #fff; padding: 10px;">Masculino</option>
+            <option value="F" style="background-color: #222; color: #fff; padding: 10px;">Feminino</option>
+            <option value="O" style="background-color: #222; color: #fff; padding: 10px;"> Não Binario</option>
+            <option value="O" style="background-color: #222; color: #fff; padding: 10px;">Outro / Pro informar</option>
+        </select>
+    </div>
+</div>
+
+            <!-- CPF -->
+            <div class="input-group">
+                <label for="cpf">CPF</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-id-card prefix-icon"></i>
+                    <input type="text" id="cpf" placeholder="000.000.000-00" required>
+                </div>
+            </div>
+
+            <!-- TELEFONE -->
+            <div class="input-group">
+                <label for="telefone">Número de Telefone</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-phone prefix-icon"></i>
+                    <input type="tel" id="telefone" placeholder="(81)99999-9999" required>
+                </div>
+            </div>
+
+            <!-- TITULO ENDEREÇO -->
+            <div class="input-group" style="text-align:center;margin:15px 0 5px">
+                <h3 style="color:#fff;font-family:Oswald;margin:0">ENDEREÇO</h3>
+            </div>
+
+            <!-- RUA -->
+            <div class="input-group">
+                <label for="rua">Rua</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-road prefix-icon"></i>
+                    <input type="text" id="rua" placeholder="Ex: Rua Madeira Vieira" required>
+                </div>
+            </div>
+
+            <!-- NÚMERO -->
+            <div class="input-group">
+                <label for="numero">Número</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-hashtag prefix-icon"></i>
+                    <input type="number" id="numero" placeholder="Ex: 999" required>
+                </div>
+            </div>
+
+            <!-- BAIRRO -->
+            <div class="input-group">
+                <label for="bairro">Bairro</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-location-dot prefix-icon"></i>
+                    <input type="text" id="bairro" placeholder="Ex: Manguesal" required>
+                </div>
+            </div>
+
+            <!-- ESTADO (TEXTO NORMAL) -->
+            <div class="input-group">
+                <label for="estado">Estado</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-flag prefix-icon"></i>
+                    <input type="text" id="estado" placeholder="Ex: Pernambuco" required>
+                </div>
+            </div>
+
+            <!-- CIDADE (TEXTO NORMAL) -->
+            <div class="input-group">
+                <label for="cidade">Cidade</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-city prefix-icon"></i>
+                    <input type="text" id="cidade" placeholder="Ex: Recife" required>
+                </div>
+            </div>
+
+            <!-- CEP -->
+            <div class="input-group">
+                <label for="cep">CEP</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-map-pin prefix-icon"></i>
+                    <input type="text" id="cep" placeholder="50000-000" required>
+                </div>
+            </div>
+
+            <!-- BOTÃO -->
+            <button type="submit" class="btn-enter" style="margin-top:20px">Fazer cadastro!</button>
+        </form>
+
+        <!-- SEGURANÇA -->
+        <div class="security-notice">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>Seus dados estão protegidos<br>com segurança avançada.</div>
+        </div>
+    </div>
+</div>
+
+<!-- RODAPÉ -->
+<footer class="bottom-bar">
+    <div class="bottom-container">
+        <div class="bottom-item"><i class="fa-regular fa-circle-xmark"></i><span>Salas Seguras</span></div>
+        <div class="bottom-item"><i class="fa-solid fa-box-open"></i><span>Sucata Controlada</span></div>
+        <div class="bottom-item"><i class="fa-solid fa-scale-balanced"></i><span>Limite: <strong>30min / 200kg</strong></span></div>
+    </div>
+</footer>
+
+</body>
+</html>

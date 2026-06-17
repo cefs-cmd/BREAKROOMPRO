@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RageRoom Pro - Nova Senha</title>
+
+    <!-- importação do css -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- IMPORTAÇÃO DE FONTES DO GOOGLE (OSWALD PARA TÍTULOS E ROBOTO PARA TEXTOS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- IMPORTAÇÃO DA BIBLIOTECA FONT AWESOME PARA EXIBIR OS ÍCONES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+
+    <!-- INÍCIO DO ELEMENTO CONTAINER (MESMA ESTRUTURA DO SEU OUTRO CÓDIGO) -->
+    <div class="container">
+        
+        <!-- LADO ESQUERDO: MESMA IDENTIDADE VISUAL -->
+        <div class="info-side">
+            
+            <!-- ÍCONE DA LOGOMARCA -->
+            <div class="logo-placeholder"><i class="fa-solid fa-skull"></i></div>
+            
+            <!-- TÍTULO DA MARCA -->
+            <h1 class="brand-title">BREAK ROOM</h1>
+            <div class="brand-subtitle">PRO</div>
+            
+            <!-- SLOGAN MANTIDO -->
+            <div class="slogan">DESTRUA <span>•</span> LIBERE <span>•</span> RENOVE</div>
+            
+            <!-- TEXTO EXPLICATIVO -->
+            <p class="description">
+                Recupere seu acesso com segurança e continue aproveitando tudo o que preparamos para você!
+            </p>
+
+            <!-- ITEM DE SEGURANÇA (IGUAL O MODELO ANTERIOR) -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Segurança garantida</h3>
+                    <p>Seus dados são protegidos e sua senha será redefinida de forma segura.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- FIM DO LADO ESQUERDO -->
+
+        <!-- LADO DIREITO: CARD DE REDEFINIÇÃO DE SENHA -->
+        <div class="login-card">
+            
+            <!-- ÍCONE TEMÁTICO PARA ESSA TELA -->
+            <div class="card-header-icon">
+                <i class="fa-solid fa-key"></i>
+            </div>
+            
+            <!-- TÍTULO DA PÁGINA -->
+            <h2>REDEFINIÇÃO DE SENHA</h2>
+            
+            <!-- SUBTÍTULO EXPLICATIVO -->
+            <div class="welcome-sub">Crie uma nova senha para acessar sua conta.</div>
+
+            <!-- FORMULÁRIO DE ENVIO DE E-MAIL -->
+            <form action="#" method="POST">
+                
+                <!-- GRUPO DO CAMPO E-MAIL (MESMA ESTRUTURA DOS INPUTS ANTERIORES) -->
+                <div class="input-group">
+                    <label for="email">Nova Senha</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-key prefix-icon"></i>
+                        <input type="password" id="email" placeholder="******" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Confimação de senha</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-key prefix-icon"></i>
+                        <input type="password" id="email" placeholder="******" required>
+                    </div>
+                </div>
+
+                <!-- BOTÃO DE ENVIO (MESMO ESTILO DO BOTÃO ENTRAR) -->
+                <button type="submit" class="btn-enter">Redefinir Senha</button>
+            </form>
+
+            <!-- LINHA DIVISÓRIA -->
+            <div class="divider">OU</div>
+
+            <!-- BOTÃO DE VOLTAR (MESMO PADRÃO DO BOTÃO CRIAR CONTA) -->
+            <a href="index.html" class="btn-register" style="text-decoration: none; display: inline-block; text-align: center;">
+                <i class="fa-solid fa-arrow-left"></i> Voltar ao Login
+            </a>
+
+            <!-- AVISO DE SEGURANÇA NO RODAPÉ DO CARD -->
+            <div class="security-notice">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>Seus dados estão protegidos<br>com segurança avançada.</div>
+            </div>
+        </div>
+        <!-- FIM DO CARD -->
+
+    </div>
+    <!-- FIM DO CONTAINER -->
+
+    <!-- RODAPÉ PADRÃO DO SEU SISTEMA -->
+    <footer class="bottom-bar">
+        <div class="bottom-container">
+            
+            <div class="bottom-item">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <span>Salas Seguras</span>
+            </div>
+            
+            <div class="bottom-item">
+                <i class="fa-solid fa-box-open"></i>
+                <span>Sucata Controlada</span>
+            </div>
+            
+            <div class="bottom-item">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Limite de Peso: <strong>30 min / até 200kg</strong></span>
+            </div>
+            
+        </div>
+    </footer>
+
+</body>
+</html>

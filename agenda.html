@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BREAK ROOM - AGENDA</title>
+
+     <link rel="stylesheet" href=""">
+</head>
+<body>
+    <!-- TELA 3: PAINEL HOME PRINCIPAL (PÓS-LOGIN) -->
+<div id="dashboardHome" class="dashboard-home hidden">
+    
+    <div class="header-top">
+        <div>
+            <h2>PAINEL DO USUÁRIO</h2>
+            <div class="welcome-sub">Olá! Gerencie suas atividades e prepare sua experiência abaixo.</div>
+        </div>
+    </div>
+
+    <!-- HISTÓRIA DA MARCA + FOTO -->
+    <div class="history-ia-section">
+        <div class="ia-generated-box">
+            <img src="imagem-instalacoes.jpg" alt="Instalações Break Room">
+        </div>
+    </div>
+
+    <!-- SEÇÃO UNIFICADA: AGENDAMENTO & CATÁLOGO -->
+    <div class="unified-catalog-scheduler">
+        
+        <!-- Parte A: Horários -->
+        <div id="schedulingSection" class="scheduling-panel">
+            <h3>1. Escolha o Horário da Sessão</h3>
+            <p class="welcome-sub">Selecione uma das opções disponíveis na nossa grade:</p>
+            
+            <div class="time-slots-grid">
+                <div class="time-slot" onclick="selectTimeSlot(this)">08:00</div>
+                <div class="time-slot" onclick="selectTimeSlot(this)">10:00</div>
+                <div class="time-slot" onclick="selectTimeSlot(this)">13:00</div>
+                <div class="time-slot" onclick="selectTimeSlot(this)">15:00</div>
+                <div class="time-slot" onclick="selectTimeSlot(this)">18:00</div>
+                <div class="time-slot" onclick="selectTimeSlot(this)">19:00</div>
+                <div class="time-slot" onclick="selectTimeSlot(this)">20:00</div>
+                <div class="time-slot" onclick="selectTimeSlot(this)">21:00</div>
+                <div class="time-slot" onclick="selectTimeSlot(this)">22:00</div>
+            </div>
+        </div>
+
+        <!-- Parte B: Tabela de Itens -->
+        <div class="catalog-sub-section">
+            <div class="card-header-icon"><i class="fa-solid fa-list-ul"></i></div>
+            <h3>2. Selecione as Sucatas para Destruição</h3>
+            <div class="welcome-sub">Marque nos círculos os componentes desejados</div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selec.</th>
+                            <th>Item</th>
+                            <th>Peso (kg)</th>
+                            <th>Qtd</th>
+                            <th>Preço (R$)</th>
+                            <th>Categoria</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaInventario">
+                        <!-- Injetado via Javascript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Barra de Ações -->
+            <div id="selectionActionBar" class="selection-action-bar hidden">
+                <div id="selectionSummary">0 item(ns) selecionado(s)</div>
+                <div>
+                    <button class="btn-action" onclick="openPaymentPage()">
+                        <i class="fa-solid fa-credit-card"></i> Agendar e Pagar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- TELA DE PAGAMENTO -->
+<div id="paymentCard" class="interactive-card wide-card hidden">
+    <div class="card-header-icon"><i class="fa-solid fa-wallet"></i></div>
+    <h2>TELA DE PAGAMENTO</h2>
+    <div id="paymentTotalText" class="welcome-sub total-text">Total: R$ 0,00</div>
+
+    <div class="payment-tabs">
+        <div id="tabPix" class="pay-tab active" onclick="switchPaymentMethod('pix')"><i class="fa-solid fa-pix"></i> PIX</div>
+        <div id="tabCard" class="pay-tab" onclick="switchPaymentMethod('card')"><i class="fa-solid fa-credit-card"></i> CARTÃO</div>
+        <div id="tabBoleto" class="pay-tab" onclick="switchPaymentMethod('boleto')"><i class="fa-solid fa-barcode"></i> BOLETO</div>
+    </div>
+
+    <!-- Conteúdo Pix -->
+    <div id="contentPix" class="payment-method-content">
+        <div class="qr-container">
+            [ QR CODE FICTÍCIO ]<br>Break Room Pro Pay
+        </div>
+        <p class="text-info">Escaneie o QR Code ou use a chave Pix abaixo:</p>
+        <div class="input-wrapper">
+            <i class="fa-solid fa-key prefix-icon"></i>
+            <input type="text" value="00020126360014br.gov.bcb.pix0114breakroompro2026" readonly>
+        </div>
+    </div>
+
+    <!-- Conteúdo Cartão -->
+    <div id="contentCard" class="payment-method-content hidden">
+        <div class="grid-form">
+            <div class="input-group span-2">
+                <label>Número do Cartão</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-credit-card prefix-icon"></i>
+                    <input type="text" placeholder="0000 0000 0000 0000">
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Validade</label>
+                <div class="input-wrapper">
+                    <i class="fa-regular fa-calendar prefix-icon"></i>
+                    <input type="text" placeholder="MM/AA">
+                </div>
+            </div>
+            <div class="input-group">
+                <label>CVV</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-shield prefix-icon"></i>
+                    <input type="text" placeholder="123">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Boleto -->
+    <div id="contentBoleto" class="payment-method-content hidden">
+        <p class="text-info">O boleto será gerado e enviado para o seu e-mail.</p>
+    </div>
+
+    <div class="btn-group">
+        <button class="btn-secondary" onclick="backToDashboard()">Voltar</button>
+        <button class="btn-action" onclick="processPayment()">Finalizar Pagamento</button>
+    </div>
+</div>
+
+<!-- TELA DE SUCESSO -->
+<div id="successCard" class="interactive-card hidden">
+    <div class="success-box">
+        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+        <h2>PAGAMENTO APROVADO!</h2>
+        <p class="welcome-sub success-msg">Sua transação foi processada com sucesso!</p>
+        
+        <div class="resumo-voucher">
+            <p><strong>Status:</strong> Confirmado</p>
+            <p><strong>Sala de Destruição:</strong> Liberada</p>
+            <p>Dados do voucher e instruções enviados por e-mail.</p>
+        </div>
+
+        <button class="btn-action" onclick="backToDashboardFromSuccess()">Voltar ao Painel</button>
+    </div>
+</div>
+    
+</body>
+</html>

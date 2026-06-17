@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RageRoom Pro - Login</title>
+
+    <!-- importação do css -->
+      <link rel="stylesheet" href="index.css">
+    
+    <!-- IMPORTAÇÃO DE FONTES DO GOOGLE (OSWALD PARA TÍTULOS IMPACTANTES E ROBOTO PARA TEXTOS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- IMPORTAÇÃO DA BIBLIOTECA FONT AWESOME PARA EXIBIR OS ÍCONES DO LAYOUT -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+
+    <!-- INÍCIO DO ELEMENTO CONTAINER (CONTÉM AS DUAS COLUNAS PRINCIPAIS SUPERIORES) -->
+    <div class="container">
+        
+        <!-- INÍCIO DO LADO ESQUERDO: SEÇÃO EXPLICATIVA E IDENTIDADE DO RAGEROOM -->
+        <div class="info-side">
+            
+            <!-- BLOCAGEM DO ÍCONE DA LOGOMARCA SUPERIOR (MÁSCARA JASON) -->
+            <div class="logo-placeholder"><i class="fa-solid fa-skull"></i></div>
+            
+            <!-- TÍTULO DA MARCA -->
+            <h1 class="brand-title">BREAK ROOM </h1>
+            
+            <!-- SUBTÍTULO DO PRODUTO -->
+            <div class="brand-subtitle">PRO</div>
+            
+            <!-- SLOGAN DE AÇÃO DO ESTABELECIMENTO -->
+            <div class="slogan">DESTRUA <span>•</span> LIBERE <span>•</span> RENOVE</div>
+            
+            <!-- PARÁGRAFO RESUMO DE APRESENTAÇÃO -->
+            <p class="description">
+                Gerencie suas sessões, escolha sua sucata e libere o estresse com segurança!
+            </p>
+
+            <!-- 1º ITEM DE BENEFÍCIO: SEGURANÇA -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Segurança em 1º lugar</h3>
+                    <p>Equipamentos de proteção e termos de responsabilidade para sua segurança.</p>
+                </div>
+            </div>
+
+            <!-- 2º ITEM DE BENEFÍCIO: DESTRUIÇÃO -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-burst"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Destrua o estresse</h3>
+                    <p>Salas equipadas para você quebrar tudo e deixar a raiva pra trás.</p>
+                </div>
+            </div>
+
+            <!-- 3º ITEM DE BENEFÍCIO: RESERVAS -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Reserve sua sessão</h3>
+                    <p>Agende sua sala, escolha sua sucata e prepare-se para destruir!</p>
+                </div>
+            </div>
+        </div>
+        <!-- FIM DO LADO ESQUERDO -->
+
+        <!-- INÍCIO DO LADO DIREITO: CARD DE AUTENTICAÇÃO / FORMULÁRIO -->
+        <div class="login-card">
+            
+            <!-- ÍCONE DE SINALIZAÇÃO INTERNA DO CARD -->
+            <div class="card-header-icon">
+                <i class="fa-solid fa-heart-crack"></i>
+            </div>
+            
+            <!-- TÍTULO DE BOAS VINDAS -->
+            <h2>BEM-VINDO(A)!</h2>
+            
+            <!-- ORIENTAÇÃO DE LOGIN -->
+            <div class="welcome-sub">Faça login para acessar o RageRoom Pro</div>
+
+            <!-- FORMULÁRIO DE LOGIN -->
+            <form>
+                
+                <!-- GRUPO DO CAMPO E-MAIL -->
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope prefix-icon"></i>
+                        <input type="email" id="email" placeholder="seu@gmail.com" required>
+                    </div>
+                </div>
+
+                <!-- GRUPO DO CAMPO SENHA -->
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock prefix-icon"></i>
+                        <input type="password" id="password" placeholder="Digite sua senha" required>
+                        <i class="fa-regular fa-eye toggle-password"></i>
+                    </div>
+                </div>
+
+                <!-- LINK DE SENHA ESQUECIDA -->
+                <a href="senha.html" class="forgot-password">Esqueceu sua senha?</a>
+
+                <!-- BOTÃO DE SUBMISSÃO (ENTRAR) -->
+                <button type="submit" class="btn-enter">Entrar</button>
+            </form>
+
+            <!-- LINHA VISUAL DIVISÓRIA COM TEXTO CENTRAL -->
+            <div class="divider">OU</div>
+
+            <!-- BOTÃO ALTERNATIVO PARA CRIAÇÃO DE NOVAS CONTAS -->
+            <a href="cadastro.html"; style="text-decoration: none;">
+            <button class="btn-register">
+                <i class="fa-regular fa-user"></i> Criar Conta
+            </button>
+            </a>
+
+            <!-- NOTA DE SEGURANÇA E CRIPTOGRAFIA DO CARD -->
+            <div class="security-notice">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>Seus dados estão protegidos<br>com segurança avançada.</div>
+            </div>
+        </div>
+        <!-- FIM DO LADO DIREITO -->
+
+    </div>
+    <!-- FIM DO CONTAINER SUPERIOR -->
+
+    <!-- INÍCIO DO RODAPÉ DE REQUISITOS (FAIXA INFERIOR COMPLETA DA TELA) -->
+    <footer class="bottom-bar">
+        <div class="bottom-container">
+            
+            <!-- ITEM DO RODAPÉ: SALAS -->
+            <div class="bottom-item">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <span>Salas Seguras</span>
+            </div>
+            
+            <!-- ITEM DO RODAPÉ: SUCATAS -->
+            <div class="bottom-item">
+                <i class="fa-solid fa-box-open"></i>
+                <span>Sucata Controlada</span>
+            </div>
+            
+            <!-- ITEM DO RODAPÉ: REGRAS DE PESO E TEMPO -->
+            <div class="bottom-item">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Limite de Peso: <strong>30 min / até 200kg</strong></span>
+            </div>
+            
+        </div>
+    </footer>
+    <!-- FIM DO RODAPÉ -->
+
+</body>
+</html>>
