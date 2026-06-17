@@ -319,7 +319,6 @@
         .divider {
             display: flex;
             align-items: center;
-            text-center: center;
             color: #444444;
             font-size: 0.8rem;
             margin: 25px 0;
