@@ -8,36 +8,38 @@
     <!-- importação do css -->
       <link rel="stylesheet" href="./css/index.css">
     
-    <!-- IMPORTAÇÃO DE FONTES DO GOOGLE (OSWALD PARA TÍTULOS IMPACTANTES E ROBOTO PARA TEXTOS) -->
+    <!-- IMPORTAÇÃO DE FONTES DO GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <!-- IMPORTAÇÃO DA BIBLIOTECA FONT AWESOME PARA EXIBIR OS ÍCONES DO LAYOUT -->
+    <!-- ÍCONES DO LAYOUT -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Carlos Eduardo -->
     
 </head>
 <body>
 
-    <!-- INÍCIO DO ELEMENTO CONTAINER (CONTÉM AS DUAS COLUNAS PRINCIPAIS SUPERIORES) -->
+    <!--  Inicio do container-->
     <div class="container">
         
-        <!-- INÍCIO DO LADO ESQUERDO: SEÇÃO EXPLICATIVA E IDENTIDADE DO RAGEROOM -->
+        
         <div class="info-side">
             
-            <!-- BLOCAGEM DO ÍCONE DA LOGOMARCA SUPERIOR (MÁSCARA JASON) -->
+           
             <div class="logo-placeholder"><i class="fa-solid fa-skull"></i></div>
             
-            <!-- TÍTULO DA MARCA -->
+            
             <h1 class="brand-title">BREAK ROOM </h1>
             
-            <!-- SUBTÍTULO DO PRODUTO -->
+            
             <div class="brand-subtitle">PRO</div>
             
-            <!-- SLOGAN DE AÇÃO DO ESTABELECIMENTO -->
+            
             <div class="slogan">DESTRUA <span>•</span> LIBERE <span>•</span> RENOVE</div>
             
-            <!-- PARÁGRAFO RESUMO DE APRESENTAÇÃO -->
+            
             <p class="description">
                 Gerencie suas sessões, escolha sua sucata e libere o estresse com segurança!
             </p>
@@ -64,7 +66,7 @@
                 </div>
             </div>
 
-            <!-- 3º ITEM DE BENEFÍCIO: RESERVAS -->
+            <!-- RESERVAS -->
             <div class="feature-item">
                 <div class="feature-icon">
                     <i class="fa-solid fa-calendar-check"></i>
@@ -75,26 +77,29 @@
                 </div>
             </div>
         </div>
-        <!-- FIM DO LADO ESQUERDO -->
+        
 
-        <!-- INÍCIO DO LADO DIREITO: CARD DE AUTENTICAÇÃO / FORMULÁRIO -->
+    
         <div class="login-card">
             
-            <!-- ÍCONE DE SINALIZAÇÃO INTERNA DO CARD -->
+        
             <div class="card-header-icon">
                 <i class="fa-solid fa-heart-crack"></i>
             </div>
             
-            <!-- TÍTULO DE BOAS VINDAS -->
+        
             <h2>BEM-VINDO(A)!</h2>
             
             <!-- ORIENTAÇÃO DE LOGIN -->
             <div class="welcome-sub">Faça login para acessar o RageRoom Pro</div>
 
+            <!-- Mensagem de ERRO OU SUCESSO -->
+            <div id="mensagem" style="color: #dc3545; text-align: center; margin: 10px 0; display: none;"></div>
+
             <!-- FORMULÁRIO DE LOGIN -->
-            <form>
+            <form id="formLogin">
                 
-                <!-- GRUPO DO CAMPO E-MAIL -->
+                <!-- E-MAIL -->
                 <div class="input-group">
                     <label for="email">E-mail</label>
                     <div class="input-wrapper">
@@ -103,28 +108,28 @@
                     </div>
                 </div>
 
-                <!-- GRUPO DO CAMPO SENHA -->
+                <!--  SENHA-->
                 <div class="input-group">
                     <label for="password">Senha</label>
                     <div class="input-wrapper">
                         <i class="fa-solid fa-lock prefix-icon"></i>
                         <input type="password" id="password" placeholder="Digite sua senha" required>
-                        <i class="fa-regular fa-eye toggle-password"></i>
+                        <i class="fa-regular fa-eye toggle-password" id="mostrarSenha"></i>
                     </div>
                 </div>
 
-                <!-- LINK DE SENHA ESQUECIDA -->
+                <!--  Rederecionamento para se caso senha esquecida -->
                 <a href="senha.html" class="forgot-password">Esqueceu sua senha?</a>
 
-                <!-- BOTÃO DE SUBMISSÃO (ENTRAR) -->
-                <button type="submit" class="btn-enter">Entrar</button>
+                <!-- botão de entrar -->
+                <button type="submit" class="btn-enter">Entrar</button> 
             </form>
 
-            <!-- LINHA VISUAL DIVISÓRIA COM TEXTO CENTRAL -->
+            <!--  Divisioria com texto central -->
             <div class="divider">OU</div>
 
             <!-- BOTÃO ALTERNATIVO PARA CRIAÇÃO DE NOVAS CONTAS -->
-            <a href="cadastro.html"; style="text-decoration: none;">
+            <a href="cadastro.html" style="text-decoration: none;">
             <button class="btn-register">
                 <i class="fa-regular fa-user"></i> Criar Conta
             </button>
@@ -145,19 +150,19 @@
     <footer class="bottom-bar">
         <div class="bottom-container">
             
-            <!-- ITEM DO RODAPÉ: SALAS -->
+            <!-- SALAS -->
             <div class="bottom-item">
                 <i class="fa-regular fa-circle-xmark"></i>
                 <span>Salas Seguras</span>
             </div>
             
-            <!-- ITEM DO RODAPÉ: SUCATAS -->
+            <!-- SUCATAS -->
             <div class="bottom-item">
                 <i class="fa-solid fa-box-open"></i>
                 <span>Sucata Controlada</span>
             </div>
             
-            <!-- ITEM DO RODAPÉ: REGRAS DE PESO E TEMPO -->
+            <!-- REGRAS DE PESO E TEMPO -->
             <div class="bottom-item">
                 <i class="fa-solid fa-scale-balanced"></i>
                 <span>Limite de Peso: <strong>30 min / até 200kg</strong></span>
@@ -167,5 +172,8 @@
     </footer>
     <!-- FIM DO RODAPÉ -->
 
+    <!-- JS adicionado -->
+     <script src="./JS/login.js"></script>
+
 </body>
-</html>>
+</html>

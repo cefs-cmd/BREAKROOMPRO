@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Room Pro - Agendamento & Pagamento</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- importação CSS -->
+     <link rel="stylesheet" href="./css/agenda-style.css">
+
+     <!-- KAUN ALEXSSANDRE -->
+    
+</head>
+<body>
+   
+    <div class="container">
+
+        <center>
+            <h2>AGENDE AGORA!</h2>
+        </center>
+         <!-- Horario Disponiveis -->
+        <div id="catalogContainer" class="unified-catalog-scheduler">
+            
+            <div class="scheduling-panel">
+                <h3>1. Escolha o Horário da Sessão</h3>
+                <p class="welcome-sub" style="text-align:left; margin-bottom:15px;">Selecione uma das opções disponíveis na nossa grade:</p>
+                
+                <div class="time-slots-grid">
+                    <div class="time-slot" onclick="selectTimeSlot(this)">08:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">10:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">13:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">15:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">18:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">19:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">20:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">21:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">22:00</div>
+                </div>
+            </div>
+             <!-- tabela de preço e itens -->
+            <div class="catalog-sub-section">
+                <h3>2. Selecione as Sucatas para Destruição</h3>
+                <div class="welcome-sub" style="margin-bottom: 20px; text-align: left;">Marque nos círculos os componentes desejados</div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align:center; width: 60px;">Selec.</th>
+                                <th>Item</th>
+                                <th style="text-align:center;">Peso (kg)</th>
+                                <th style="text-align:center;">Qtd</th>
+                                <th style="text-align:center;">Preço (R$)</th>
+                                <th style="text-align:center;">Categoria</th>
+                                <th style="text-align:center;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaInventario">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div id="selectionActionBar" class="selection-action-bar hidden">
+                    <div id="selectionSummary" style="font-weight: bold; color: #fff;">0 item(ns) selecionado(s)</div>
+                    <div>
+                        <button class="btn-action" onclick="openPaymentPage()">
+                            <i class="fa-solid fa-credit-card"></i> Agendar e Pagar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!-- aplicação do cartão de credito -->
+        <div id="paymentCard" class="interactive-card hidden">
+            <h3>Finalizar Operação</h3>
+            <div id="paymentTotalText" class="welcome-sub" style="font-size: 1.2rem; color: #fff; font-weight: bold; margin-bottom: 20px;">Total: R$ 0,00</div>
+            
+            <div class="payment-tabs">
+                <div id="tabCard" class="pay-tab active" onclick="switchPaymentMethod('card')">
+                    <i class="fa-solid fa-credit-card"></i> CARTÃO DE CRÉDITO
+                </div>
+                <div id="tabBoleto" class="pay-tab" onclick="switchPaymentMethod('boleto')">
+                    <i class="fa-solid fa-barcode"></i> BOLETO BANCÁRIO
+                </div>
+                <div id="tabPix" class="pay-tab" onclick="switchPaymentMethod('pix')">
+                    <i class="fa-brands fa-pix"></i> PIX
+                </div>
+            </div>
+      
+            <div id="contentCard" class="payment-method-content">
+                <div class="grid-form">
+                    <div class="input-group span-2">
+                        <label>Número do Cartão</label>
+                        <div class="input-wrapper"><input type="text" placeholder="0000 0000 0000 0000"></div>
+                    </div>
+                    <div class="input-group span-2">
+                        <label>Nome do Titular</label>
+                        <div class="input-wrapper"><input type="text" placeholder="EX: PEDRO V SILVA"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>Validade</label>
+                        <div class="input-wrapper"><input type="text" placeholder="MM/AA"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>CVV</label>
+                        <div class="input-wrapper"><input type="text" placeholder="123"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- pagamento no boleto, layout -->
+            <div id="contentBoleto" class="payment-method-content hidden">
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; text-align: center; border: 1px dashed #444;">
+                    <i class="fa-solid fa-envelope-open-text" style="font-size: 2.5rem; color: var(--orange-bright); margin-bottom: 15px;"></i>
+                    <p style="margin: 0; color: #eee; font-size: 0.95rem; line-height: 1.6;">
+                        O boleto bancário será gerado e enviado diretamente para o seu <strong>e-mail cadastrado</strong> assim que o agendamento for confirmado.
+                    </p>
+                </div>
+            </div>
+               <!-- FOTO QRCODE, Junto com o layout de pagamento -->
+            <div id="contentPix" class="payment-method-content hidden">
+                <div class="pix-container">
+                    <div class="pix-qr-code">
+                        <img src="./img/Foto QRcode.jpeg" alt="QR Code PIX"; width="100%">
+                    </div>
+                    <p style="color:#fff; font-weight:bold; margin: 10px 0;">Escaneie o código acima com o aplicativo do seu banco</p>
+                    <div class="pix-code-text">
+                        00020126360014BR.NU.PIX0114+558199999999952040000530398654040.005802BR5913BreakRoomPro6008Recife62150511AGENDAMENTO6304E2CA
+                    </div>
+                    <p class="pix-info">
+                        Chave PIX: <strong>5581999999999</strong><br>
+                        Valor: <span id="pixValue">R$ 0,00</span><br>
+                        Pagamento instantâneo e seguro. Após pagar, confirme o agendamento abaixo.
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                <button class="btn-secondary" onclick="backToCatalog()">Voltar</button>
+                <button class="btn-action" style="flex-grow: 1; justify-content: center;" onclick="processPayment()">Confirmar Pagamento</button>
+            </div>
+        </div>
+
+        <div id="successCard" class="interactive-card hidden">
+            <div class="success-box">
+                <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+                <h2 style="font-family: 'Oswald', sans-serif; letter-spacing: 1px; margin-bottom: 10px;">AGENDAMENTO CONCLUÍDO!</h2>
+                <p class="welcome-sub">Sua vaga foi reservada com sucesso. Prepare-se para descarregar o estresse!</p>
+                <button class="btn-action" style="margin: 0 auto; width: auto;" onclick="resetWorkflow()">Agendar Outra Sessão</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- importação JS -->
+     <script src="./JS/agenda.js"></script>
+     
+</body>
+</html>

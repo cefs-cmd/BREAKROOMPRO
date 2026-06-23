@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Room Pro - Sistema Completo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- importação de css -->
+    <link rel="stylesheet" href="./css/admin.css">
+
+    <!-- Carlos Eduardo, acrescentei apenas o admin -->
+    
+</head>
+<body>
+
+    <!-- Botão flutuante para acesso admin -->
+    <button class="btn-admin-toggle" onclick="abrirLoginAdmin()">
+        <i class="fa-solid fa-lock"></i>
+    </button>
+
+    <div class="container">
+        
+        <!-- Área de Agendamento do cliente -->
+        <div id="catalogContainer" class="unified-catalog-scheduler">
+            
+            <div class="scheduling-panel">
+                <h3>1. Escolha o Horário da Sessão</h3>
+                <p class="welcome-sub" style="text-align:left; margin-bottom:15px;">Selecione uma das opções disponíveis na nossa grade:</p>
+                
+                <div class="time-slots-grid">
+                    <div class="time-slot" onclick="selectTimeSlot(this)">08:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">10:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">13:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">15:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">18:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">19:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">20:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">21:00</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">22:00</div>
+                </div>
+            </div>
+
+            <div class="catalog-sub-section">
+                <h3>2. Selecione as Sucatas para Destruição</h3>
+                <div class="welcome-sub" style="margin-bottom: 20px; text-align: left;">Marque nos círculos os componentes desejados</div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align:center; width: 60px;">Selec.</th>
+                                <th>Item</th>
+                                <th style="text-align:center;">Peso (kg)</th>
+                                <th style="text-align:center;">Qtd</th>
+                                <th style="text-align:center;">Preço (R$)</th>
+                                <th style="text-align:center;">Categoria</th>
+                                <th style="text-align:center;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaInventario">
+                            <!-- Carregado via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="selectionActionBar" class="selection-action-bar hidden">
+                    <div id="selectionSummary" style="font-weight: bold; color: #fff;">0 item(ns) selecionado(s)</div>
+                    <div>
+                        <button class="btn-action" onclick="openPaymentPage()">
+                            <i class="fa-solid fa-credit-card"></i> Agendar e Pagar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de Pagamento -->
+        <div id="paymentCard" class="interactive-card hidden">
+            <h3>Finalizar Operação</h3>
+            <div id="paymentTotalText" class="welcome-sub" style="font-size: 1.2rem; color: #fff; font-weight: bold; margin-bottom: 20px;">Total: R$ 0,00</div>
+            
+            <div class="payment-tabs">
+                <div id="tabCard" class="pay-tab active" onclick="switchPaymentMethod('card')">
+                    <i class="fa-solid fa-credit-card"></i> CARTÃO DE CRÉDITO
+                </div>
+                <div id="tabBoleto" class="pay-tab" onclick="switchPaymentMethod('boleto')">
+                    <i class="fa-solid fa-barcode"></i> BOLETO BANCÁRIO
+                </div>
+                <div id="tabPix" class="pay-tab" onclick="switchPaymentMethod('pix')">
+                    <i class="fa-brands fa-pix"></i> PIX
+                </div>
+            </div>
+
+            <div id="contentCard" class="payment-method-content">
+                <div class="grid-form">
+                    <div class="input-group span-2">
+                        <label>Número do Cartão</label>
+                        <div class="input-wrapper"><input type="text" placeholder="0000 0000 0000 0000"></div>
+                    </div>
+                    <div class="input-group span-2">
+                        <label>Nome do Titular</label>
+                        <div class="input-wrapper"><input type="text" placeholder="EX: PEDRO V SILVA"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>Validade</label>
+                        <div class="input-wrapper"><input type="text" placeholder="MM/AA"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>CVV</label>
+                        <div class="input-wrapper"><input type="text" placeholder="123"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contentBoleto" class="payment-method-content hidden">
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; text-align: center; border: 1px dashed #444;">
+                    <i class="fa-solid fa-envelope-open-text" style="font-size: 2.5rem; color: var(--orange-bright); margin-bottom: 15px;"></i>
+                    <p style="margin: 0; color: #eee; font-size: 0.95rem; line-height: 1.6;">
+                        O boleto bancário será gerado e enviado diretamente para o seu <strong>e-mail cadastrado</strong> assim que o agendamento for confirmado.
+                    </p>
+                </div>
+            </div>
+
+            <div id="contentPix" class="payment-method-content hidden">
+                <div class="pix-container">
+                    <div class="pix-qr-code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=00020126360014BR.GOV.BCB.PIX0114+558199999999952040000530398654040.005802BR5913BreakRoomPro6008Recife62150511AGENDAMENTO6304E2CA" alt="QR Code PIX">
+                    </div>
+                    <p style="color:#fff; font-weight:bold; margin: 10px 0;">Escaneie o código acima com o aplicativo do seu banco</p>
+                    <div class="pix-code-text" id="codigoPix">
+                        00020126360014BR.GOV.BCB.PIX0114+558199999999952040000530398654040.005802BR5913BreakRoomPro6008Recife62150511AGENDAMENTO6304E2CA
+                        <button class="btn-copy" onclick="copiarCodigoPix()">Copiar</button>
+                    </div>
+                    <p class="pix-info">
+                        Chave PIX: <strong>5581999999999</strong><br>
+                        Valor: <span id="pixValue">R$ 0,00</span><br>
+                        Pagamento instantâneo e seguro. Após pagar, confirme o agendamento abaixo.
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                <button class="btn-secondary" onclick="backToCatalog()">Voltar</button>
+                <button class="btn-action" style="flex-grow: 1; justify-content: center;" onclick="processPayment()">Confirmar Pagamento</button>
+            </div>
+        </div>
+
+        <!-- area de sucesso, quando o pagamento é executado -->
+        <div id="successCard" class="interactive-card hidden">
+            <div class="success-box">
+                <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+                <h2 style="font-family: 'Oswald', sans-serif; letter-spacing: 1px; margin-bottom: 10px;">AGENDAMENTO CONCLUÍDO!</h2>
+                <p class="welcome-sub">Sua vaga foi reservada com sucesso. Prepare-se para descarregar o estresse!</p>
+                <button class="btn-action" style="margin: 0 auto; width: auto;" onclick="resetWorkflow()">Agendar Outra Sessão</button>
+            </div>
+        </div>
+
+        <!-- Gerenciamento de Estoque -->
+        <div id="adminPanel" class="admin-panel hidden">
+            <div class="admin-header">
+                <h2 style="font-family: 'Oswald', sans-serif; color: var(--orange-bright); margin:0;">
+                    <i class="fa-solid fa-boxes-stacked"></i> Gerenciamento de Estoque
+                </h2>
+                <div>
+                    <button class="btn-action btn-sm" onclick="adicionarNovoItem()">
+                        <i class="fa-solid fa-plus"></i> Novo Item
+                    </button>
+                    <button class="btn-secondary btn-sm" style="margin-left:8px;" onclick="fecharPainelAdmin()">
+                        <i class="fa-solid fa-xmark"></i> Fechar
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome do Item</th>
+                            <th>Peso (kg)</th>
+                            <th>Quantidade</th>
+                            <th>Preço (R$)</th>
+                            <th>Categoria</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaAdmin">
+                        <!-- Carregado via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Login Admin -->
+        <div id="loginAdmin" class="interactive-card hidden">
+            <div class="login-box">
+                <h3 style="text-align:center; border:none; padding:0;">Acesso Administrativo</h3>
+                <div class="input-group span-2" style="margin-bottom:15px;">
+                    <label>Usuário</label>
+                    <div class="input-wrapper"><input type="text" id="adminUser" placeholder="Digite o usuário"></div>
+                </div>
+                <div class="input-group span-2" style="margin-bottom:20px;">
+                    <label>Senha</label>
+                    <div class="input-wrapper"><input type="password" id="adminPass" placeholder="Digite a senha"></div>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <button class="btn-secondary" style="flex:1;" onclick="fecharLoginAdmin()">Cancelar</button>
+                    <button class="btn-action" style="flex:1;" onclick="validarLoginAdmin()">Entrar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <!-- IMPORTAÇÃO DE JS -->
+     <script src="./JS/admin.js"></script>
+
+
+</body>
+</html>
