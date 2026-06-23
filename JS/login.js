@@ -19,8 +19,6 @@
                 tipo: "usuario",
                 pagina: "inicio.html" // Página de agendamento normal
             }
-
-            
             
         ];
 
