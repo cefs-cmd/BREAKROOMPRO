@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Break Room Pro - Agendamento & Pagamento</title>
+    <title>Break Room Pro - Sistema Completo</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- importação de css -->
+    <link rel="stylesheet" href="./css/admin.css">
 
-    <!-- importação CSS -->
-     <link rel="stylesheet" href="./css/agenda-style.css">
-
-     <!-- KAUN ALEXSSANDRE -->
+    <!-- Carlos Eduardo, acrescentei apenas o admin -->
     
 </head>
-<body>
-   
-    <div class="container">
+<body>  
 
-        <center>
-            <h2>AGENDE AGORA!</h2>
-        </center>
-         <!-- Horario Disponiveis -->
+    <div class="container">
+        
+        <!-- Área de Agendamento do cliente -->
         <div id="catalogContainer" class="unified-catalog-scheduler">
             
             <div class="scheduling-panel">
@@ -42,7 +39,7 @@
                     <div class="time-slot" onclick="selectTimeSlot(this)">22:00</div>
                 </div>
             </div>
-             <!-- tabela de preço e itens -->
+
             <div class="catalog-sub-section">
                 <h3>2. Selecione as Sucatas para Destruição</h3>
                 <div class="welcome-sub" style="margin-bottom: 20px; text-align: left;">Marque nos círculos os componentes desejados</div>
@@ -61,7 +58,8 @@
                             </tr>
                         </thead>
                         <tbody id="tabelaInventario">
-                            </tbody>
+                            <!-- Carregado via JS -->
+                        </tbody>
                     </table>
                 </div>
 
@@ -75,7 +73,8 @@
                 </div>
             </div>
         </div>
-          <!-- aplicação do cartão de credito -->
+
+        <!-- Área de Pagamento -->
         <div id="paymentCard" class="interactive-card hidden">
             <h3>Finalizar Operação</h3>
             <div id="paymentTotalText" class="welcome-sub" style="font-size: 1.2rem; color: #fff; font-weight: bold; margin-bottom: 20px;">Total: R$ 0,00</div>
@@ -91,7 +90,7 @@
                     <i class="fa-brands fa-pix"></i> PIX
                 </div>
             </div>
-      
+
             <div id="contentCard" class="payment-method-content">
                 <div class="grid-form">
                     <div class="input-group span-2">
@@ -112,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <!-- pagamento no boleto, layout -->
+
             <div id="contentBoleto" class="payment-method-content hidden">
                 <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; text-align: center; border: 1px dashed #444;">
                     <i class="fa-solid fa-envelope-open-text" style="font-size: 2.5rem; color: var(--orange-bright); margin-bottom: 15px;"></i>
@@ -121,15 +120,16 @@
                     </p>
                 </div>
             </div>
-               <!-- FOTO QRCODE, Junto com o layout de pagamento -->
+
             <div id="contentPix" class="payment-method-content hidden">
                 <div class="pix-container">
                     <div class="pix-qr-code">
-                        <img src="./img/Foto QRcode.jpeg" alt="QR Code PIX"; width="100%">
+                        <img src="./img/Foto QRcode.jpeg" alt="QR Code PIX"; style="width: 100%;">
                     </div>
                     <p style="color:#fff; font-weight:bold; margin: 10px 0;">Escaneie o código acima com o aplicativo do seu banco</p>
-                    <div class="pix-code-text">
-                        00020126360014BR.NU.PIX0114+558199999999952040000530398654040.005802BR5913BreakRoomPro6008Recife62150511AGENDAMENTO6304E2CA
+                    <div class="pix-code-text" id="codigoPix">
+                        00020126360014BR.GOV.BCB.PIX0114+558199999999952040000530398654040.005802BR5913BreakRoomPro6008Recife62150511AGENDAMENTO6304E2CA
+                        <button class="btn-copy" onclick="copiarCodigoPix()">Copiar</button>
                     </div>
                     <p class="pix-info">
                         Chave PIX: <strong>5581999999999</strong><br>
@@ -145,6 +145,7 @@
             </div>
         </div>
 
+        <!-- area de sucesso, quando o pagamento é executado -->
         <div id="successCard" class="interactive-card hidden">
             <div class="success-box">
                 <div class="success-icon"><i class="fa-solid fa-check"></i></div>
@@ -154,10 +155,16 @@
             </div>
         </div>
 
-    </div>
 
-    <!-- importação JS -->
+
+        
+
+        
+
+    
+    <!-- IMPORTAÇÃO DE JS -->
      <script src="./JS/agenda.js"></script>
-     
+
+
 </body>
 </html>

@@ -1,5 +1,5 @@
+       //    KAUN ALEXSSANDRE
        // Dados do estoque - ARMAZENAMENTO ÚNICO
-    //    KAUN ALEXSSANDRE
         let inventario = [
             {id: 1, nome:"Monitor CRT Antigo", peso: 6.0, qtd:12, preço: 10.0, cat:"Eletrônicos", status:"Disponível", img:"https://images.unsplash.com/photo-1547082299-de196ea013d6?w=150"},
             {id: 2, nome:"Garrafas de Vidro", peso: 0.6, qtd:45, preço: 3.0, cat:"Vidros", status:"Disponível", img:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=150"},

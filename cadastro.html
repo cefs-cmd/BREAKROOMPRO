@@ -61,13 +61,13 @@
         <h2>FAÇA SEU CADASTRO</h2>
         <div class="welcome-sub">Preencha seus dados para acessar o sistema</div>
 
-        <form>
+        <form id="cadastroform">
             <!-- NOME COMPLETO -->
             <div class="input-group">
                 <label for="nome">E-MAIL</label>
                 <div class="input-wrapper">
                     <i class="fa-solid fa-user prefix-icon"></i>
-                    <input type="text" id="nome" placeholder="Ex: seu@gmail.com" required>
+                    <input type="text" id="email" placeholder="Ex: seu@gmail.com" required>
                 </div>
             </div>
 
@@ -87,6 +87,7 @@
                 <div class="input-wrapper">
                     <i class="fa-solid fa-lock-open prefix-icon"></i>
                     <input type="password" id="confirma_senha" placeholder="Repita sua senha" required>
+                    <i class="fa-regular fa-eye toggle-password"></i>
                 </div>
             </div>
 
@@ -110,7 +111,7 @@
             <option value="M" style="background-color: #222; color: #fff; padding: 10px;">Masculino</option>
             <option value="F" style="background-color: #222; color: #fff; padding: 10px;">Feminino</option>
             <option value="O" style="background-color: #222; color: #fff; padding: 10px;"> Não Binario</option>
-            <option value="O" style="background-color: #222; color: #fff; padding: 10px;">Outro / Pro informar</option>
+            <option value="O" style="background-color: #222; color: #fff; padding: 10px;">Prefiro não informar</option>
         </select>
     </div>
 </div>
@@ -160,6 +161,9 @@
         <div class="bottom-item"><i class="fa-solid fa-scale-balanced"></i><span>Limite: <strong>30min / 200kg</strong></span></div>
     </div>
 </footer>
+
+<!-- Importação do JS -->
+<script src="./JS/cadastro.js"></script>
 
 </body>
 </html>

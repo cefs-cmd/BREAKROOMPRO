@@ -11,9 +11,9 @@
                 email: "cadu@gmail.com",
                 senha: "cadu123",
                 tipo: "usuario",
-                pagina: "agenda.html" // Página de agendamento normal
+                pagina: "inicio.html" // Página de agendamento normal
             }
-            // Você pode adicionar quantos usuários quiser aqui seguindo esse modelo
+            
         ];
 
         // Mostrar / Ocultar senha
