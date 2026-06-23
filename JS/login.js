@@ -12,14 +12,7 @@
                 senha: "cadu123",
                 tipo: "usuario",
                 pagina: "inicio.html" // Página de agendamento normal
-            },
-            {
-                email: "usuario@gmail.com",
-                senha: "user123",
-                tipo: "usuario",
-                pagina: "inicio.html" // Página de agendamento normal
             }
-            
         ];
 
         // Mostrar / Ocultar senha
