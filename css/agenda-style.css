@@ -7,7 +7,7 @@
             --text-gray: #aaaaaa;
             --border-gray: #333333;
         }
-
+      /* config da tela do body */
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--bg-dark);
@@ -21,12 +21,12 @@
             background-position: center;
             background-attachment: fixed;
         }
-
+    /* limita a largura do conteúdo para não ficar muito largo  */
         .container {
             width: 100%;
             max-width: 1100px;
         }
-
+     /* alteração de cores de fundo etc */
         .unified-catalog-scheduler, .interactive-card {
             background: rgba(26, 26, 26, 0.95);
             border: 1px solid rgba(230, 81, 0, 0.25);
@@ -36,7 +36,7 @@
             backdrop-filter: blur(10px);
             margin-bottom: 30px;
         }
-
+    /* muda todas as cores, larguras, etc dos h3 */
         h3 {
             font-family: 'Oswald', sans-serif;
             font-size: 1.4rem;
@@ -47,19 +47,19 @@
             border-left: 4px solid var(--orange-main);
             padding-left: 10px;
         }
-
+       /* mudando cor dos h2 */
         h2 {
             color: #E65100;
             font-family: 'Oswald', sans-serif;
 
-        }
-
+        } 
+        /* mudnado cor e tamanho dos textos na div */
         .welcome-sub {
             color: var(--text-gray);
             font-size: 0.9rem;
             margin-bottom: 25px;
         }
-
+       /* mudando cor do painel / borda  */
         .scheduling-panel {
             margin-bottom: 40px;
             background: rgba(0,0,0,0.3);
@@ -67,13 +67,13 @@
             border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.05);
         }
-
+      /* mudar poisições */
         .time-slots-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 12px;
         }
-
+    /* mudando a grade de horario do agendamento */
         .time-slot {
             background: #111111;
             border: 1px solid var(--border-gray);
@@ -98,7 +98,7 @@
             color: #ffffff;
             box-shadow: 0 0 10px rgba(230, 81, 0, 0.4);
         }
-
+      /* mudando o tamanho da tabela para ficar responsive  */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -140,7 +140,7 @@
             font-size: 0.95rem;
             vertical-align: middle;
         }
-
+      /* mudando tamnho dos itens/ icones */
         .item-img {
             width: 50px;
             height: 50px;
@@ -191,7 +191,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
+       /* personalizando o select / posição */
         .selection-action-bar {
             background: rgba(18, 18, 18, 0.95);
             border-top: 2px solid var(--orange-main);
@@ -287,7 +287,7 @@
         .span-2 {
             grid-column: span 2;
         }
-
+      /* Mudando todos os inputs que é colocado na agenda / posição etc */
         .input-group {
             display: flex;
             flex-direction: column;
@@ -337,7 +337,7 @@
             box-shadow: 0 0 20px rgba(46,125,50,0.4);
         }
 
-        /* Estilos para PIX */
+        /* Mudando o PIX*/
         .pix-container {
             text-align: center;
             padding: 20px;
@@ -356,7 +356,7 @@
             align-items: center;
             justify-content: center;
         }
-
+         
         .pix-code-text {
             background: #111;
             border: 1px solid var(--border-gray);

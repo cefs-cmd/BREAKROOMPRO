@@ -170,7 +170,7 @@
                 alert('Usuário ou senha incorretos!');
             }
         }
-
+    //  junção da tabela do agendamento
         function fecharPainelAdmin() {
             document.getElementById('adminPanel').classList.add('hidden');
             usuarioLogado = false;

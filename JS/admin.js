@@ -175,7 +175,7 @@
             document.getElementById('adminPanel').classList.add('hidden');
             usuarioLogado = false;
         }
-
+    // junção da tabela da agenda
         function carregarTabelaAdmin() {
             const container = document.getElementById('tabelaAdmin');
             container.innerHTML = '';
