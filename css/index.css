@@ -311,6 +311,23 @@
             transition: background-color 0.2s;
         }
 
+        /* BOTAO DE ENVIAR DA SENHA */
+
+        .ds {
+        padding: 15px 165px;
+        background-color: var(--orange-main);
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+    }
+    /* Cor do back ground em volta (senha) */
+        .ds:hover {
+        background-color: var(--orange-bright);
+       }
+
         /* EFEITO DE COR MAIS ACESA AO PASSAR O MOUSE NO BOTÃO ENTRAR */
         .btn-enter:hover {
             background-color: var(--orange-bright);
