@@ -314,7 +314,8 @@
         /* BOTAO DE ENVIAR DA SENHA */
 
         .ds {
-        padding: 15px 165px;
+        font-size: 1.3rem;
+        padding: 14px 158px;
         background-color: var(--orange-main);
         color: #fff;
         border-radius: 6px;
